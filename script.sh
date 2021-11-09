@@ -7,7 +7,7 @@ mkdir -p in
 mkdir -p out
 ls
 
-cd sssp
+cd sssp_serial
 make
 K=( 3 4 6 8)
 S=( 4 5 6 7)
@@ -27,12 +27,12 @@ do
   fi
 done
 
-cd ./sssp
+cd ./sssp_serial
 for i in "${S[@]}"
 do
   ./compare "../out/rmat-${i}-serial.txt" "../out/rmat-"${i}"-parallel.txt"
 done
 
-cd ./sssp
+cd ./sssp_serial
 make clean
 cd ../
